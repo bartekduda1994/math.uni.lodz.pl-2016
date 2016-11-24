@@ -1,0 +1,12 @@
+#
+# Plik wejsciowy dla PICT.
+# BD praca domowa lekcja 3 
+# 24.11.2016
+#
+
+Typ_klienta:		Gosc, Zarejestrowany, Super-klient
+Znizka_dla_klienta:     0%, 1%, 5%, 7%, 10%, 13%, 15%, 20%
+Darmowy_transport:	TAK, NIE	
+
+{ Typ_klienta, Znizka_dla_klienta, Darmowy_transport } @ 3
+{ Typ_klienta, Darmowy_transport } @ 2
