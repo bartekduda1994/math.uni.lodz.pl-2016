@@ -1,0 +1,30 @@
+#
+# Plik wejsciowy dla PICT.
+# BD praca domowa lekcja 3 
+# 24.11.2016
+#
+
+Typ_klienta:		Gosc, Zarejestrowany, Super-klient
+Koszt: 			150, 300, 25, 50
+Znizka_dla_klienta:     0%, 1%, 5%, 7%, 10%, 13%, 15%, 20%
+Darmowy_transport:	TAK, NIE	
+
+IF [Typ_klienta]= "Super-klient" AND [Koszt] >= 300 THEN [Znizka_dla_klienta] = "20%";
+IF [Typ_klienta]= "Super-klient" AND [Koszt] < 150 THEN [Znizka_dla_klienta] = "10%";
+IF [Typ_klienta]= "Super-klient" AND [Koszt] >= 150 AND [Koszt]<300 THEN [Znizka_dla_klienta] = "15%";
+IF [Typ_klienta]= "Super-klient" THEN [Darmowy_transport]="TAK";
+IF [Typ_klienta]= "Zarejestrowany" AND [Koszt] >= 300 THEN [Znizka_dla_klienta] = "13%";
+IF [Typ_klienta]= "Zarejestrowany" AND [Koszt] < 150 THEN [Znizka_dla_klienta] = "5%";
+IF [Typ_klienta]= "Zarejestrowany" AND [Koszt] >= 150 AND [Koszt]<300 THEN [Znizka_dla_klienta] = "7%";
+IF [Typ_klienta]= "Zarejestrowany" AND [Koszt] < 150 THEN [Darmowy_transport] = "NIE";
+IF [Typ_klienta]= "Zarejestrowany" AND [Koszt] >= 150 THEN [Darmowy_transport] = "TAK";
+IF [Typ_klienta]="Gosc" AND [Koszt] < 300 THEN [Darmowy_transport] = "NIE";
+IF [Typ_klienta]="Gosc" AND [Koszt] >= 300 THEN [Darmowy_transport] = "TAK"; 
+IF [Typ_klienta]="Gosc" AND [Koszt] >= 150 THEN [Znizka_dla_klienta] = "5%";
+IF [Typ_klienta]="Gosc" AND [Koszt] < 50 THEN [Znizka_dla_klienta] = "0%";
+IF [Typ_klienta]="Gosc" AND [Koszt] >= 50 AND [Koszt] < 150 THEN [Znizka_dla_klienta] = "1%";	
+
+
+
+
+
